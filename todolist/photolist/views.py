@@ -3,6 +3,7 @@ from django.contrib import messages
 from .forms import PostForm
 from .models import Post
 from django.views.generic import DetailView
+from django.contrib.auth.decorators import login_required
 
 # def photo_list(request):
 #     return render(request, 'photolist/photo_list.html')
@@ -58,6 +59,7 @@ def account(request):
     #    'form': form
     #})
 
+@login_required
 def post_new(request):
     if request.method == 'POST' or request.method == 'FILES':
         # 입력 내용을 DB에 저장
