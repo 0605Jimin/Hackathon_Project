@@ -1,3 +1,4 @@
+from distutils.text_file import TextFile
 from django.db import models
 from django.conf import settings
 from django.core.validators import MinLengthValidator
@@ -7,6 +8,7 @@ class Post(models.Model):
     author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     is_public = models.BooleanField(default=False, verbose_name='공개여부')
     photo = models.ImageField(blank=True, upload_to='photolist/post/%Y/%m/%d')
+    place = models.CharField(max_length=20)
     title = models.CharField(max_length=20)
     content = models.TextField(
         validators=[MinLengthValidator(10)]
