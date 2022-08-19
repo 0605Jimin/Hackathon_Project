@@ -15,12 +15,41 @@
     <!-- instagram-content -->
     <div class="instagram-card">
         <div class="instagram-card-header">
-            <!-- <img src="{% static "images/photo.jpg" %}" class="instagram-card-user-image"/> -->
             {% if post.photo %}
-                <div>
+                <img src="{{ post.photo.url }}" class="instagram-card-user-image"/>
+            {% endif %}
+            <a class="instagram-card-user-name" href="#">followmeto</a>
+            <div class="instagram-card-time">58 min</div>
+        </div>
+    
+        {% if post.photo %}
+                <div class="intagram-card-image">
                     <img src="{{ post.photo.url }}" />
                 </div>
-            {% endif %}
+        {% endif %}
+
+    
+        <div class="instagram-card-content">
+            <p class="likes">18.068 Me gusta</p>
+            <p>
+                <!-- 사용자 이름 -->
+                <a class="instagram-card-content-user" href="#">followmeto</a>
+                <!-- 사용자 이름 --> 
+                
+                <!-- 사용자 내용 입력 -->
+                {{ post.content }}
+                <!-- 사용자 내용 입력 -->
+                
+            </p>
+            <!-- 답변수 -->
+            <p class="comments">ver los 48 comentarios</p>
+            <!-- 답변수 -->
+            <!-- 다른 사용자 댓글 -->
+            <br><a class="user-comment" href="#">sanguine.j@loaf_made</a> wowwwwww</br>
+            <br><a class="user-comment" href="#">spainstakeoverWow</a> 😍</br>
+            <br><a class="user-comment" href="#">edieandottotravelsSo</a> cool ❄️</br>
+            <hr>
+            <!-- 다른 사용자 댓글 -->
         </div>
         
         <!-- 댓글 입력칸 -->
@@ -33,5 +62,16 @@
     </div>
     <!-- instagram-content -->
 {% endblock content %}
+
+
+
+
+
+
+
+
+
+
+
 
 
