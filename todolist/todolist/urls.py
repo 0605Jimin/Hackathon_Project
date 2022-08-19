@@ -12,9 +12,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', accounts_views.login, name='home'),
     path('photolist/', include('photolist.urls')),
-    path('login/', accounts_views.login, name='login'),
-    path('logout/', accounts_views.logout, name='logout'),
-    path('signup/', accounts_views.signup, name='signup')
+    path('accounts/', include('accounts.urls')),
 ]
 
 

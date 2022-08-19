@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib import auth
 from django.contrib.auth.models import User
+from django.contrib import messages
 
 # Create your views here.
 def login(request):
@@ -13,10 +14,10 @@ def login(request):
             auth.login(request, user)
             return redirect('home')
         else:
-            return render(request, 'bad_login.html')
+            return render(request, 'accounts/bad_login.html')
     # request == POST 로그인시키기
     else:
-        return render(request, 'login.html')
+        return render(request, 'accounts/login.html')
     # request == GET login html 띄우기
 
 def logout(request):
@@ -31,5 +32,6 @@ def signup(request):
             #로그인
             auth.login(request, new_user)
             #홈 리다이렉션
+            messages.success(request, "회원가입을 환영합니다.")
             return redirect('home')
-    return render(request, 'register.html')
+    return render(request, 'accounts/register.html')
