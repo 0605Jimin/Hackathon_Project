@@ -100,6 +100,7 @@
 }
 /*map*/
 #info {
+  box-shadow: 1px 1px 1px 1px #999;
   border: 1px solid #dae1e6;
   margin: 20px;
   width: 58%;
@@ -131,6 +132,7 @@
 /*login*/
 
 .login {
+  box-shadow: 1px 1px 1px 1px #999;
   padding: 16px 16px 12px 17px;
   background-color: #f7f9fa;
   border: 1px solid #dae1e6;
@@ -188,6 +190,7 @@
 
 /* food_header */
 #top_container {
+  box-shadow: 1px 1px 1px 1px #999;
   border: 1px solid #dae1e6;
   width: 90.5%;
   background-color: #4B89DC;
@@ -237,6 +240,7 @@
 }
 
 .mainBox {
+    box-shadow: 3px 3px 3px 3px #999;
     width: 30%;
     border: 1px solid #dae1e6;
     text-align: center;
@@ -414,3 +418,71 @@ img {
   gap: 20px;
   
 }
+
+
+/* footer */
+#footer_box {
+  margin-top: 40px;
+  height: 400px;
+  background-color:  #E3EFFF;
+  border: 1px solid #dae1e6;
+  padding: 20px;
+}
+
+#footer_info {
+  margin-top: 20px;
+  display: flex;
+  flex-flow: wrap;
+  justify-content: space-between;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #5990D9
+}
+
+#footer_info .circle {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  background-color: #A2C5F2;
+  border-radius: 40px;
+}
+#footer_info .circle_box {
+
+}
+
+#footer_info .circle_right {
+  
+}
+
+.footer_title {
+  margin-left: 60px;
+}
+.front_end_info {
+
+}
+
+.backend_info {
+
+}
+.other_info {
+  margin-right: 60px;
+}
+
+#footer_info h2 {
+  font-family: 'Source Sans Pro', sans-serif;
+  color: #276ACE;  
+}
+
+#footer_info p {
+  font-family: 'Noto Sans KR', sans-serif;
+  line-height: 1.8em;
+  color: #276ACE;  
+}
+
+
+.copyright {
+  font-family: 'Source Sans Pro', sans-serif;
+  color: #276ACE;  
+  padding-top: 20px;
+}
+
+/* footer */
