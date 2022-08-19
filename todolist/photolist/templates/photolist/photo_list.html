@@ -58,7 +58,6 @@
     <!-- best_container -->
     <div class="upload"><p class="new"><a href="{% url "photolist:post_new" %}">New</a></p></div>
     
-    <a href="{% url 'photolist:post_new' %}">New22</a>
 
     <!-- main_container -->
     <div id="main">
@@ -86,43 +85,3 @@
     <script src="https://kit.fontawesome.com/54ae93b2e8.js" crossorigin="anonymous"></script>
     <script src="{% static "js/photo_board.js" %}" defer></script>
 {% endblock content %}
-
-{% block footer %}
-
-    <footer>
-        <div id="footer_box">
-            <div id="footer_info">
-                <div class="footer_title">
-                    
-                    <h2 class="circle_right">강맛</h2><br>        
-                    <p>@ Kangwon National University<br>@ Team KM.Company<br>@ Project 강맛</p>
-                </div>
-                <div class="front_end_info">
-                    <h2>front end</h2><br>
-                    <p>안재진<br>김지민</p><br>
-                    <h2>tech skills</h2><br>
-                    <p>HTML,CSS,JavaScript</p>
-                </div>
-                <div class="backend_info">
-                    <h2>backend</h2><br>
-                    <p>한주영<br>박서희</p><br>
-                    <h2>tech skills</h2><br>
-                    <p>Django</p>
-                </div>
-                <div class="other_info">
-                    <h2>Contact Us</h2><br>
-                    <p>
-                        <b>Email</b> annjae4676@naver.com<br><b>GitHub </b><a href="{% static 'github.com/acs0209/hackathonProject' %}"><i class="fa-brands fa-github"></i></a>
-                        <br><b>facebook </b><i class="fa-brands fa-facebook"></i><br><b>instagram </b><i class="fa-brands fa-instagram"></i>
-                        <br><b>twitter </b><i class="fa-brands fa-twitter"></i>
-                    </p>
-                </div>
-            </div>
-
-            <div class="copyright">
-                <p>Copyright @ team A All rights reserved.</p>
-            </div>
-        </div> 
-    </footer>
-
-{% endblock footer %}
