@@ -1,0 +1,128 @@
+{% extends "photolist/layout.html" %}
+{% load static %}
+
+{% block title %}
+  photolist
+{% endblock title %}
+
+{% block content %}
+    <!-- header -->
+    <header id="header">
+        <div class="header_container">
+            <!-- info -->
+            <div id="info">         
+                <img class="gomduli_cheeze" src="{% static "images/gomduli_cheeze.jpg" %}">
+                <div class="info">
+                    <h4 class="info_header">강원대학교 근처 맛집 <br>강맛</h4>
+                    <p class="info_content">곰두리들도 인정할 만한 당신만의 맛집들을 기록하세요.</p>
+                </div>
+            </div>
+            <!-- login -->
+            <div class="login">
+                <h2 class="blind">로그인</h2>
+                <p class="login_msg">이 사이트를 더 안전하고 편리하게 이용하세요</p>
+                <a href="#" class="link_login">
+                    <i class="ico_naver">
+                        <span class="blind">강맛</span>
+                    </i>
+                    로그인
+                </a>
+                <div class="sub_area">
+                    <div class="look_box">
+                        <a href="#" class="look_id">아이디</a>
+                        <a href="#" class="look_pw">비밀번호찾기</a>
+                    </div>
+                    <a href="#" class="member_join">
+                        회원가입
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>        
+    <!-- header -->
+
+    <!-- header -->
+    <header id="top_container">
+        <div class="top_content">
+            <img class="gom_left" src="{% static "images/gomduli_left.jpg" %}">        
+            <p class="top_food">강원대학교 근처 맛집 top 3!!!</p>
+            <img class="gom_right" src="{% static "images/gomduli_right.jpg" %}">        
+        </div>
+    </header>
+    <!-- header -->
+    
+    <!-- best_container -->
+
+    <!-- 여기에 맛집 top3을 넣어야 합니다. -->
+
+    <!-- best_container -->
+    <div class="upload"><p class="new"><a href="{% url "photolist:post_new" %}">New</a></p></div>
+    
+    <a href="{% url 'photolist:post_new' %}">New22</a>
+
+    <!-- main_container -->
+    <div id="main">
+        {% for post in photo_list %}
+        <div class="mainBox">
+            {% if post.photo %}
+                <img class="memo_photo" width="450" src="{{ post.photo.url }}"/>
+            {% else %}
+                No Photo
+            {% endif %}
+            <div class="memoBox">
+                <h3 class="bo">burger</h3>
+                <p class="bo">haha</p>
+                <div class="view-photo">
+                    <a href="{{ post.get_absolute_url }} ">
+                        {{ post.title }}
+                    </a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    <!-- main_container -->
+
+    <script src="https://kit.fontawesome.com/54ae93b2e8.js" crossorigin="anonymous"></script>
+    <script src="{% static "js/photo_board.js" %}" defer></script>
+{% endblock content %}
+
+{% block footer %}
+
+    <footer>
+        <div id="footer_box">
+            <div id="footer_info">
+                <div class="footer_title">
+                    
+                    <h2 class="circle_right">강맛</h2><br>        
+                    <p>@ Kangwon National University<br>@ Team KM.Company<br>@ Project 강맛</p>
+                </div>
+                <div class="front_end_info">
+                    <h2>front end</h2><br>
+                    <p>안재진<br>김지민</p><br>
+                    <h2>tech skills</h2><br>
+                    <p>HTML,CSS,JavaScript</p>
+                </div>
+                <div class="backend_info">
+                    <h2>backend</h2><br>
+                    <p>한주영<br>박서희</p><br>
+                    <h2>tech skills</h2><br>
+                    <p>Django</p>
+                </div>
+                <div class="other_info">
+                    <h2>Contact Us</h2><br>
+                    <p>
+                        <b>Email</b> annjae4676@naver.com<br><b>GitHub </b><a href="{% static 'github.com/acs0209/hackathonProject' %}"><i class="fa-brands fa-github"></i></a>
+                        <br><b>facebook </b><i class="fa-brands fa-facebook"></i><br><b>instagram </b><i class="fa-brands fa-instagram"></i>
+                        <br><b>twitter </b><i class="fa-brands fa-twitter"></i>
+                    </p>
+                </div>
+            </div>
+
+            <div class="copyright">
+                <p>Copyright @ team A All rights reserved.</p>
+            </div>
+        </div> 
+    </footer>
+
+{% endblock footer %}

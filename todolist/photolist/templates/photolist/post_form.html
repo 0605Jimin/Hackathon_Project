@@ -1,0 +1,31 @@
+{% extends "photolist/layout.html" %}
+{% load bootstrap4 %}
+{% block title %}
+    new
+{% endblock title %}
+{% block content %}
+    <!-- Post Detail pk#{{ post.pk }} -->
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6 offset-sm-3">
+                <form action="" method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    {% bootstrap_form form %}
+                    {% buttons %}
+                        <button class="btn btn-primary">
+                            저장
+                        </button>
+                    {% endbuttons %}
+                </form>
+            </div>
+        </div>
+    </div> 
+    
+    {% comment %} <div class="container">
+        <div class="row">
+            <div class="col-sm-6 offset-sm-3">
+                {% include "_form.html" %}
+            </div>
+        </div>
+    </div> {% endcomment %}
+{% endblock content%}

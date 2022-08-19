@@ -1,0 +1,44 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>{% block title %}{% endblock title %}</title>
+        <meta charset="utf-8">
+        <!-- <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="{% static 'bootstrap/css/styles.css' %}">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet"> -->
+        <link rel="stylesheet" href="{% static 'bootstrap-4.6.2-dist/css/bootstrap.min.css' %}" />
+        <script src="{% static 'jquery-3.6.0.min.js' %}"></script>
+        <script src="{% static 'bootstrap-4.6.2-dist/js/bootstrap.min.js' %}"></script>
+        <link rel="stylesheet" href="{% static "css/photo_board.css" %}">
+        {% block head %}
+        {% endblock head %}
+    </head>
+
+    <body>
+    <!-- navbar -->
+    <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
+      <h5 class="my-0 mr-md-auto font-weight-normal">강맛</h5>
+      <nav class="my-2 my-md-0 mr-md-3">
+        <a class="p-2 text-dark" href="#">Profile</a>
+      </nav>
+      <a class="btn btn-outline-primary" href="#">Sign up</a>
+    </div>
+    <!-- navbar -->
+
+    {% block content %}
+    {% endblock content %}
+    <hr/>
+
+
+    <!-- Footer -->
+    <div>
+        &copy; LikelionHackaton.강원대학교
+    </div>
+
+    </body>
+</html>
