@@ -45,13 +45,20 @@
             <p class="comments">ver los 48 comentarios</p>
             <!-- 답변수 -->
             <!-- 다른 사용자 댓글 -->
+            <!-- 다른 사용자 댓글 수정  -->
+            <hr>
+            {% for comment in post.comment_set.all  %}
+            <p> <strong>{{ comment.author }}</strong> - {{ comment }}</p>
+            {% endfor %}
+            <!-- 다른 사용자 댓글 -->
             <br><a class="user-comment" href="#">sanguine.j@loaf_made</a> wowwwwww</br>
             <br><a class="user-comment" href="#">spainstakeoverWow</a> 😍</br>
             <br><a class="user-comment" href="#">edieandottotravelsSo</a> cool ❄️</br>
             <hr>
             <!-- 다른 사용자 댓글 -->
         </div>
-        
+        <!-- 댓글 입력하기 수정 -->
+        <a href="{% url 'photolist:comment_new' post.pk %}" >새 댓글 쓰기</a>
         <!-- 댓글 입력칸 -->
         <div class="instagram-card-footer">
             <a class="footer-action-icons" href="#"><i class="fa fa-heart-o"></i></a><!-- 하트 이미지 -->

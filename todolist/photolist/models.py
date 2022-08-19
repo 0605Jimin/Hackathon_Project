@@ -1,5 +1,8 @@
+from tkinter import CASCADE
 from django.db import models
 from django.conf import settings
+from django.contrib import auth
+from django.contrib.auth.models import User
 from django.core.validators import MinLengthValidator
 from django.urls import reverse
 
@@ -17,3 +20,15 @@ class Post(models.Model):
 
     def get_absolute_url(self):
         return reverse('photolist:photo_detail', args=[self.pk])
+
+class Comment(models.Model):
+    author = models.ForeignKey(settings.AUTH_USER_MODEL,on_delete=models.CASCADE )
+    post = models.ForeignKey(Post, on_delete=models.CASCADE)
+    message = models.CharField(max_length=200)
+    date = models.DateField(auto_now_add=True)
+
+    class Meta:
+        ordering = ['-date']
+
+    def __str__(self):
+        return self.message

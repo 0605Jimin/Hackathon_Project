@@ -1,8 +1,11 @@
 from django.contrib import admin
-from .models import Post
+from .models import Post,Comment
 from django.utils.safestring import mark_safe
 
+admin.site.register(Comment)
 @admin.register(Post)
+
+
 class PostAdmin(admin.ModelAdmin):
     list_display = ['id', 'photo_tag', 'title', 'is_public', 'created_at', 'updated_at']
     list_display_links = ['title']

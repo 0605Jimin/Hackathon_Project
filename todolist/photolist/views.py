@@ -1,6 +1,6 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib import messages
-from .forms import PostForm
+from .forms import PostForm, CommentForm
 from .models import Post
 from django.views.generic import DetailView
 from django.contrib.auth.decorators import login_required
@@ -22,6 +22,7 @@ def photo_list(request):
 class PostDetailView(DetailView):
     template_name = 'photolist/photo_detail.html'
     model = Post
+    comment_form = CommentForm()
     # queryset = Post.objects.filter(is_public=True)
 
     def get_queryset(self):
@@ -75,3 +76,24 @@ def post_new(request):
     return render(request, 'photolist/post_form.html', {
         'form': form,
         })
+#.
+def detail(request, blog_id):
+    # blog_id 번째 블로그 글을 데이터베어스로부터 갖고와서
+    blog_detail = get_object_or_404(Blog, pk=blog_id)
+    # blog_id 번째 블로그 글을 detail.html로 띄어주는 코드
+    comment_form = CommentForm()
+
+@login_required
+def comment_new(request,post_pk):
+    post = get_object_or_404(Post, pk=post_pk)
+    if request.method == 'POST':
+        form = CommentForm(request.POST, request.FILES)
+        if form.is_valid():
+            comment = form.save(commit=False)
+            comment.post = post
+            comment.author = request.user
+            comment.save()
+            return redirect(comment.post)
+    else:
+        form = CommentForm()
+    return render(request, "photolist/comment_form.html", {"form":form})
