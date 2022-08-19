@@ -15,14 +15,19 @@
     <!-- instagram-content -->
     <div class="instagram-card">
         <div class="instagram-card-header">
-            <img src="{% static "images/photo.jpg" %}" class="instagram-card-user-image"/>
+            {% if post.photo %}
+                <img src="{{ post.photo.url }}" class="instagram-card-user-image"/>
+            {% endif %}
             <a class="instagram-card-user-name" href="#">followmeto</a>
             <div class="instagram-card-time">58 min</div>
         </div>
     
-        <div class="intagram-card-image">
-            <img src="{% static "images/photo.jpg" %}" height="600px"/>
-        </div>
+        {% if post.photo %}
+                <div class="intagram-card-image">
+                    <img src="{{ post.photo.url }}" />
+                </div>
+        {% endif %}
+
     
         <div class="instagram-card-content">
             <p class="likes">18.068 Me gusta</p>
@@ -30,13 +35,11 @@
                 <!-- 사용자 이름 -->
                 <a class="instagram-card-content-user" href="#">followmeto</a>
                 <!-- 사용자 이름 --> 
+                
                 <!-- 사용자 내용 입력 -->
-                So excited to have made it to Lapland! Our first stop was sleeping inside a room made 
-                entirely of ice at the Kemi Snow Hotel 😱 Stoked that I've ticked this off my bucket list 
-                and never have to do it again... Let's just say the novelty of sleeping in -5 degrees 
-                temperature quickly wears off (but hey, it was a COOL experience nonetheless) 😜❄️ 
+                {{ post.content }}
                 <!-- 사용자 내용 입력 -->
-                <a class="hashtag" href="#">#visitkemi</a>
+                
             </p>
             <!-- 답변수 -->
             <p class="comments">ver los 48 comentarios</p>
@@ -59,5 +62,16 @@
     </div>
     <!-- instagram-content -->
 {% endblock content %}
+
+
+
+
+
+
+
+
+
+
+
 
 
