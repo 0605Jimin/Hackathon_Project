@@ -6,11 +6,23 @@
     <head>
         <title>{% block title %}{% endblock title %}</title>
         <meta charset="utf-8">
-        <!-- <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="{% static 'bootstrap/css/styles.css' %}">
+        
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet"> -->
+        <link href="https://fonts.googleapis.com/css2?family=Gugi&display=swap" rel="stylesheet">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap" rel="stylesheet">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap" rel="stylesheet"> 
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap" rel="stylesheet">
+
         <link rel="stylesheet" href="{% static 'bootstrap-4.6.2-dist/css/bootstrap.min.css' %}" />
         <script src="{% static 'jquery-3.6.0.min.js' %}"></script>
         <script src="{% static 'bootstrap-4.6.2-dist/js/bootstrap.min.js' %}"></script>
@@ -30,7 +42,7 @@
       {% endif %}
     <!-- navbar -->
     <div class="d-flex flex-column flex-md-row align-items-center p-4 px-md-4 mb-3 bg-white border-bottom shadow-sm">
-      <h5 class="my-0 mr-md-auto font-weight-normal">강맛</h5>
+      <h5 class="my-0 mr-md-auto font-weight-normal"><span class="font-style">강맛</span></h5>
       <nav class="my-2 my-md-0 mr-md-3">
         <a class="p-2 text-dark" href="{% url 'accounts:signup' %}">Profile</a>
       </nav>
@@ -53,15 +65,15 @@
                   <p>@ Kangwon National University<br>@ Team KM.Company<br>@ Project 강맛</p>
               </div>
               <div class="front_end_info">
-                  <h2>front end</h2><br>
+                  <h2>front end</h2>
                   <p>안재진<br>김지민</p><br>
-                  <h2>tech skills</h2><br>
+                  <h2>tech skills</h2>
                   <p>HTML,CSS,JavaScript</p>
               </div>
               <div class="backend_info">
-                  <h2>backend</h2><br>
+                  <h2>backend</h2>
                   <p>한주영<br>박서희</p><br>
-                  <h2>tech skills</h2><br>
+                  <h2>tech skills</h2>
                   <p>Django</p>
               </div>
               <div class="other_info">
@@ -75,7 +87,7 @@
           </div>
 
           <div class="copyright">
-              &copy; Copyright @ team A All rights reserved.
+              &copy; Copyright @ Team KM.Company All rights reserved.
           </div>
       </div> 
   </footer>
