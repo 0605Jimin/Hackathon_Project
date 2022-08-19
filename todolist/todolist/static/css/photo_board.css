@@ -252,12 +252,28 @@
 .memo_photo {
     width: 100%;
 }
+
+.photo_title {
+  color: black;
+}
+
 .memoBox {
 
 }
 .bo {
     margin-top: 20px;
     margin-bottom: 20px;
+    
+}
+
+.memoBox h3 {
+  font-size: 20px;
+}
+.memoBox p {
+  font-size: 20px;
+}
+.photo_title {
+  font-size: 15px;
 }
 
 .view-photo {
