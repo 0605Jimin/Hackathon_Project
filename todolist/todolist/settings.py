@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     # locals apps
     'bootstrap4',
     'photolist',
+    'accounts',
 
 
 ]

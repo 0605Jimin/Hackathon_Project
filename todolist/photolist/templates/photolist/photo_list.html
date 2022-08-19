@@ -21,7 +21,7 @@
             <div class="login">
                 <h2 class="blind">로그인</h2>
                 <p class="login_msg">이 사이트를 더 안전하고 편리하게 이용하세요</p>
-                <a href="#" class="link_login">
+                <a href="{% url 'login' %}" class="link_login">
                     <i class="ico_naver">
                         <span class="blind">강맛</span>
                     </i>
@@ -32,7 +32,7 @@
                         <a href="#" class="look_id">아이디</a>
                         <a href="#" class="look_pw">비밀번호찾기</a>
                     </div>
-                    <a href="#" class="member_join">
+                    <a href="{% url 'signup' %}" class="member_join">
                         회원가입
                     </a>
                 </div>

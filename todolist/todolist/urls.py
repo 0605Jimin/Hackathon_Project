@@ -3,13 +3,18 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 from django.views.generic import RedirectView
+from accounts import views as accounts_views
 
 urlpatterns = [
     path('', RedirectView.as_view(
         pattern_name = 'photolist:photo_list' 
     ), name='root'),    # url이 빈공간일 때 photolist앱에서 url name인 photo_list로 /photolist 로 감
     path('admin/', admin.site.urls),
+    path('', accounts_views.login, name='home'),
     path('photolist/', include('photolist.urls')),
+    path('login/', accounts_views.login, name='login'),
+    path('logout/', accounts_views.logout, name='logout'),
+    path('signup/', accounts_views.signup, name='signup')
 ]
 
 
