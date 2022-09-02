@@ -147,17 +147,21 @@ hr{
 }
 
 .ins_comment {
-  font-family: 'Lobster Two', cursive;
+  font-family: 'Jua', sans-serif;
 }
 .comment-list {
-  font-family: 'Lobster Two', cursive;
+  font-family: 'Jua', sans-serif;
 }
 .host_comment {
-  font-family: 'Lobster Two', cursive;
+  font-family: 'Jua', sans-serif;
 }
 .instagram-card-user-name {
-  font-family: 'Lobster Two', cursive;
+  font-family: 'Jua', sans-serif;
 }
 .col-sm-12 {
   margin-bottom: 15px;
+}
+.likes {
+  display: inline-block;
+  margin-left: 10px;
 }

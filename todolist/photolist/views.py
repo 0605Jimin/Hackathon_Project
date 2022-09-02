@@ -128,6 +128,22 @@ def detail(request, blog_id):
     comment_form = CommentForm()
 
 @login_required
+def post_like(request, pk):
+    post = get_object_or_404(Post, pk=pk)
+    post.like_user_set.add(request.user)
+    messages.success(request, f"포스팅#{post.pk}의 좋아요를 취소합니다.")
+    redirect_url = request.META.get("HTTP_REFERER", "root")
+    return redirect(redirect_url)
+
+@login_required
+def post_unlike(request, pk):
+    post = get_object_or_404(Post, pk=pk)
+    post.like_user_set.remove(request.user)
+    messages.success(request, f"포스팅#{post.pk}를 좋아합니다.") 
+    redirect_url = request.META.get("HTTP_REFERER", "root")
+    return redirect(redirect_url)
+
+@login_required
 def comment_new(request,post_pk):
     post = get_object_or_404(Post, pk=post_pk)
     if request.method == 'POST':

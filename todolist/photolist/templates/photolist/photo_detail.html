@@ -3,6 +3,8 @@
 {% load bootstrap4 %}
 {% load humanize%}
 
+{% load likeunlike_tags %}
+
 {% block title %}
   photo_detail
 {% endblock title %}
@@ -13,6 +15,8 @@
 
 
 {% block content %}
+
+
     <!-- instagram-content -->
     <div class="instagram-card">
         <div class="instagram-card-header">
@@ -36,10 +40,16 @@
                     <img src="{{ post.photo.url }}" />
                 </div>
         {% endif %}
-
+        
+        
     
         <div class="instagram-card-content">
             <!-- 좋아요 수 -->
+            {% if post|is_like_user:user %}
+                <a href="{% url "photolist:post_unlike" post.pk %}" style="color:inherit;">♡</a>
+            {% else %}
+                <a href="{% url "photolist:post_like" post.pk %}" style="color:inherit;">♥</a>
+            {% endif %}
             <p class="likes">18.068 Me gusta</p>
             <p class="host_comment">
                 <!-- 사용자 이름 -->
@@ -67,6 +77,7 @@
         </div>
         <!-- 댓글 입력하기 수정 -->
         <!-- 댓글 입력칸 -->
+            
         <form action="{% url "photolist:comment_new" post.pk %}" method="POST" class="col-sm-12">
             <div class="ins_comment">
                 {% csrf_token %}
