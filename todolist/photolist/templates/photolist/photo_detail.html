@@ -17,12 +17,20 @@
     <div class="instagram-card">
         <div class="instagram-card-header">
             {% if post.photo %}
-                <img src="{{ post.photo.url }}" class="instagram-card-user-image"/>
+                <img src="{% static "images/gomduli_left.jpg" %}" class="instagram-card-user-image"/>
             {% endif %}
             <a class="instagram-card-user-name" href="#">{{ post.author }}</a>
-            <div class="instagram-card-time">58 min</div>
+            <div class="instagram-card-time">{{ post.created_at|naturaltime }}</div>
+
+            <a href="{% url 'photolist:post_edit' post.pk %}" class="btn btn-info">
+                수정
+            </a>
+        
+            <a href="{% url 'photolist:post_delete' post.pk %}" class="btn btn-danger">
+                삭제
+            </a>
         </div>
-    
+
         {% if post.photo %}
                 <div class="intagram-card-image">
                     <img src="{{ post.photo.url }}" />
@@ -33,40 +41,34 @@
         <div class="instagram-card-content">
             <!-- 좋아요 수 -->
             <p class="likes">18.068 Me gusta</p>
-            <p>
+            <p class="host_comment">
                 <!-- 사용자 이름 -->
                 <a class="instagram-card-content-user" href="#">{{ post.author }}</a>
-                <!-- 사용자 이름 --> 
-                
+                <!-- 사용자 이름 -->
+
                 <!-- 사용자 내용 입력 -->
                 {{ post.content }}
                 <!-- 사용자 내용 입력 -->
-                
             </p>
             <!-- 답변수 -->
-            <p class="comments">ver los 48 comentarios</p>
+            <p class="comments">댓글 {{ post.comment_set.count }}개</p>
             <!-- 답변수 -->
-            <!-- 다른 사용자 댓글 -->
-            <!-- 다른 사용자 댓글 수정  -->
             <hr>
+            <!-- 다른 사용자 댓글 -->
             <div class="comment-list mt-3 mb-3"> 
                 {% for comment in post.comment_set.all  %}
-                <strong>{{ comment.author }}</strong> - {{ comment }}
-                <small class="text-muted">{{ comment.created_at|naturaltime }}</small>
-                <br>
+                    <strong class="author">{{ comment.author }}</strong> - {{ comment }}
+                    <span class="text-muted date">{{ comment.created_at|naturaltime }}</span>
+                    <br>
+                    <br>    
                 {% endfor %}
             </div>
-            <!-- 다른 사용자 댓글 -->
-            <br><a class="user-comment" href="#">sanguine.j@loaf_made</a> wowwwwww</br>
-            <br><a class="user-comment" href="#">spainstakeoverWow</a> 😍</br>
-            <br><a class="user-comment" href="#">edieandottotravelsSo</a> cool ❄️</br>
-            <hr>
             <!-- 다른 사용자 댓글 -->
         </div>
         <!-- 댓글 입력하기 수정 -->
         <!-- 댓글 입력칸 -->
-        <form action="{% url "photolist:comment_new" post.pk %}" method="POST">
-            <div>
+        <form action="{% url "photolist:comment_new" post.pk %}" method="POST" class="col-sm-12">
+            <div class="ins_comment">
                 {% csrf_token %}
                 {% bootstrap_form comment_form %}
                 <input type="submit" value="댓글 쓰기" class="btn btn-primary btn-block"  />
