@@ -1,4 +1,5 @@
 {% extends "photolist/layout.html" %}
+{% load bootstrap4 %}
 {% load static %}
 
 {% block title %}
@@ -70,7 +71,7 @@
 
     <!-- best_container -->
     <div class="upload"><p class="new"><a href="{% url "photolist:post_new" %}">New</a></p></div>
-    
+
 
     <!-- main_container -->
     <div id="main">
@@ -82,10 +83,10 @@
                 No Photo
             {% endif %}
             <div class="memoBox">
-                <h3 class="bo">burger</h3>
-                <p class="bo">haha</p>
+                <h3 class="bo">{{ post.author }}</h3>
+                <p class="bo">your title</p>
                 <div class="view-photo">
-                    <a href="{{ post.get_absolute_url }} ">
+                    <a class="photo_title" href="{{ post.get_absolute_url }} ">
                         {{ post.title }}
                     </a>
                 </div>
