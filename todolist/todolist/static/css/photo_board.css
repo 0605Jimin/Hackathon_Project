@@ -2,94 +2,6 @@
     margin: 0;
   }
 
-
-/* navbar
-  .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 8px 12px;
-  }
-  
-  a {
-    color: black;
-    text-decoration: none;
-  }
-  
-  .nav_menu1 {
-    padding-left: 10px;
-    font-size: 26px;
-  }
-  .nav_menu1 i {
-    color: #54248f;
-  }
-  
-  .navbar_menu {
-    display: flex;
-    padding-left: 0;
-  }
-  .navbar_menu li {
-    font-size: 20px;
-    padding: 8px 12px;
-    list-style: none;
-  }
-  
-  .navbar_icons {
-    list-style: none;
-    color: black;
-    display: flex;
-    padding-left: 0;
-  }
-  .navbar_icons i {
-    padding: 8px 12px;
-  }
-  
-  .navbar_toogleBtn {
-    display: none;
-    position: absolute;
-    right: 32px;
-    font-size: 24px;
-    color: #54248f;
-  }
-  
-  @media screen and (max-width: 768px){
-    .navbar {
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 8px 24px;
-    }
-    .navbar_menu {
-        display: none;
-        flex-direction: column;
-        align-items: center;
-        width: 100%;
-    }
-  
-    .navbar_menu li {
-        width: 100%;
-        text-align: center;
-    }
-  
-    .navbar_icons {
-        display: none;
-        justify-content: center;
-        width: 100%;
-    }
-    
-    .navbar_toogleBtn {
-        display: block;
-    }
-  
-    .navbar_menu.active,
-    .navbar_icons.active {
-        display: flex;
-    }
-  
-  }
-/*navbar*/ 
-
-/*test*/
-
 #header {
   width: 100%;
   height: 200px;
@@ -105,7 +17,7 @@
   margin: 20px;
   width: 58%;
   height: 150px;
-  background-color: #f7f9fa;
+  background-color: #A2C5F2;
   position: absolute;
   left: 40px;
 }
@@ -119,11 +31,11 @@
 
 .info h4 {
   font-size: 30px;
-  font-family: 'Do Hyeon', sans-serif;
+  font-family: 'Jua', sans-serif;
 }
 .info p {
   font-size: 18px;
-  font-family: 'Do Hyeon', sans-serif;
+  font-family: 'Jua', sans-serif;
 }
 
 .info_header {
@@ -145,7 +57,8 @@
 .login {
   box-shadow: 1px 1px 1px 1px #999;
   padding: 16px 16px 12px 17px;
-  background-color: #f7f9fa;
+  /* background-color: #f7f9fa; */
+  background-color: #A2C5F2;
   border: 1px solid #dae1e6;
   position: absolute;
   margin: 20px;
@@ -159,7 +72,7 @@
   display: none;
 }
 .login_msg {
-  font-family: 'Do Hyeon', sans-serif;
+  font-family: 'Jua', sans-serif;
   margin-top: 5px;
   margin-bottom: 15px;
   text-align: center;
@@ -182,19 +95,19 @@
   float: left;
 }
 .look_id {
-  font-family: 'Do Hyeon', sans-serif;
+  font-family: 'Jua', sans-serif;
   font-size: 13px;
   margin-left: 10px;
   color: black;
 }
 .look_pw {
-  font-family: 'Do Hyeon', sans-serif;
+  font-family: 'Jua', sans-serif;
   font-size: 13px;
   margin-left: 10px;
   color: black;
 }
 .member_join {
-  font-family: 'Do Hyeon', sans-serif;
+  font-family: 'Jua', sans-serif;
   font-size: 13px;
   margin-right: 40px;
   float: right;
@@ -208,7 +121,7 @@
   box-shadow: 1px 1px 1px 1px #999;
   border: 1px solid #dae1e6;
   width: 90.5%;
-  background-color: #4B89DC;
+  background-color: #A2C5F2;
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 40px;
@@ -221,7 +134,7 @@
 }
 
 .top_food {
-  font-family: 'Do Hyeon', sans-serif;
+  font-family: 'Jua', sans-serif;
   position: absolute;
   float: left;
   left: 32%;
@@ -256,6 +169,7 @@
 }
 
 .mainBox {
+    background-color: #f7f9fa;
     box-shadow: 3px 3px 3px 3px #999;
     width: 30%;
     border: 1px solid #dae1e6;
@@ -269,14 +183,22 @@
     width: 100%;
 }
 
-.photo_title {
+.photo_author {
+  color: black;
+  font-family: 'Jua', sans-serif;
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+.photo_author a{
   color: black;
 }
+
 
 .memoBox {
 
 }
 .bo {
+    font-family: 'Jua', sans-serif;
     margin-top: 20px;
     margin-bottom: 20px;
     
@@ -504,14 +426,14 @@ img {
 }
 
 #footer_info h2 {
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: 'Jua', sans-serif;
   color: #276ACE;  
   font-size: 25px;
   
 }
 
 #footer_info p {
-  font-family: 'Noto Sans KR', sans-serif;
+  font-family: 'Jua', sans-serif;
   line-height: 1.8em;
   color: #276ACE;  
 }
@@ -519,7 +441,7 @@ img {
 
 .copyright {
   margin-top: 15px;
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: 'Jua', sans-serif;
   color: #276ACE;  
 }
 

@@ -19,19 +19,27 @@ def photo_list(request):
         'q': q ,
     })
 
-class PostDetailView(DetailView):
-    template_name = 'photolist/photo_detail.html'
-    model = Post
+# class PostDetailView(DetailView):
+#     template_name = 'photolist/photo_detail.html'
+#     model = Post
+#     comment_form = CommentForm()
+#     # queryset = Post.objects.filter(is_public=True)
+
+#     def get_queryset(self):
+#         qs = super().get_queryset()
+#         if not self.request.user.is_authenticated:
+#             qs = qs.filter(is_public=True)
+#         return qs
+
+# photo_detail = PostDetailView.as_view()
+
+def photo_detail(request, pk):
+    post = get_object_or_404(Post, pk=pk)
     comment_form = CommentForm()
-    # queryset = Post.objects.filter(is_public=True)
-
-    def get_queryset(self):
-        qs = super().get_queryset()
-        if not self.request.user.is_authenticated:
-            qs = qs.filter(is_public=True)
-        return qs
-
-photo_detail = PostDetailView.as_view()
+    return render(request, "photolist/photo_detail.html", {
+        "post": post,
+        "comment_form": comment_form,
+    })
 
 def home(request):
     return render(request, 'photolist/home.html')

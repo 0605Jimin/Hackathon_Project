@@ -1,3 +1,8 @@
+.navbar {
+    height: 70px;
+    background-color : #f7f9fa;
+}
+
 .btn {
     border: 1px solid #dae1e6;
 }
@@ -6,6 +11,10 @@
     background-color: #f7f9fa;
 }
 .font-style {
+    text-decoration-line: none;
+    color: black;
     font-size: 25px;
     font-family: 'Gugi', cursive;
 }
+
+

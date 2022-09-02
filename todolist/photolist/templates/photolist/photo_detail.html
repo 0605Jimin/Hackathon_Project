@@ -1,6 +1,7 @@
 {% extends "photolist/layout.html" %}
 {% load static %}
 {% load bootstrap4 %}
+{% load humanize%}
 
 {% block title %}
   photo_detail
@@ -18,7 +19,7 @@
             {% if post.photo %}
                 <img src="{{ post.photo.url }}" class="instagram-card-user-image"/>
             {% endif %}
-            <a class="instagram-card-user-name" href="#">followmeto</a>
+            <a class="instagram-card-user-name" href="#">{{ post.author }}</a>
             <div class="instagram-card-time">58 min</div>
         </div>
     
@@ -30,10 +31,11 @@
 
     
         <div class="instagram-card-content">
+            <!-- 좋아요 수 -->
             <p class="likes">18.068 Me gusta</p>
             <p>
                 <!-- 사용자 이름 -->
-                <a class="instagram-card-content-user" href="#">followmeto</a>
+                <a class="instagram-card-content-user" href="#">{{ post.author }}</a>
                 <!-- 사용자 이름 --> 
                 
                 <!-- 사용자 내용 입력 -->
@@ -47,9 +49,13 @@
             <!-- 다른 사용자 댓글 -->
             <!-- 다른 사용자 댓글 수정  -->
             <hr>
-            {% for comment in post.comment_set.all  %}
-            <p> <strong>{{ comment.author }}</strong> - {{ comment }}</p>
-            {% endfor %}
+            <div class="comment-list mt-3 mb-3"> 
+                {% for comment in post.comment_set.all  %}
+                <strong>{{ comment.author }}</strong> - {{ comment }}
+                <small class="text-muted">{{ comment.created_at|naturaltime }}</small>
+                <br>
+                {% endfor %}
+            </div>
             <!-- 다른 사용자 댓글 -->
             <br><a class="user-comment" href="#">sanguine.j@loaf_made</a> wowwwwww</br>
             <br><a class="user-comment" href="#">spainstakeoverWow</a> 😍</br>
@@ -58,13 +64,14 @@
             <!-- 다른 사용자 댓글 -->
         </div>
         <!-- 댓글 입력하기 수정 -->
-        <a href="{% url 'photolist:comment_new' post.pk %}" >새 댓글 쓰기</a>
         <!-- 댓글 입력칸 -->
-        <div class="instagram-card-footer">
-            <a class="footer-action-icons" href="#"><i class="fa fa-heart-o"></i></a><!-- 하트 이미지 -->
-            <input class="comments-input" type="text" placeholder="댓글 입력..."/>
-            {% comment %} <a class="footer-action-icons" href="#"><i class="fa fa-ellipsis-h"></i></a> {% endcomment %}
-        </div>
+        <form action="{% url "photolist:comment_new" post.pk %}" method="POST">
+            <div>
+                {% csrf_token %}
+                {% bootstrap_form comment_form %}
+                <input type="submit" value="댓글 쓰기" class="btn btn-primary btn-block"  />
+            </div>
+        </form>
          <!-- 댓글 입력칸 -->
     </div>
     <!-- instagram-content -->

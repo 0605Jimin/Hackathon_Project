@@ -83,12 +83,14 @@
                 No Photo
             {% endif %}
             <div class="memoBox">
-                <h3 class="bo">{{ post.author }}</h3>
-                <p class="bo">your title</p>
-                <div class="view-photo">
-                    <a class="photo_title" href="{{ post.get_absolute_url }} ">
-                        {{ post.title }}
+                <h3 class="photo_author" >
+                    <a  href="{{ post.get_absolute_url }} ">
+                        {{ post.author }}
                     </a>
+                </h3>
+                <p class="bo">{{ post.place }}</p>
+                <div class="view-photo">
+                    {{ post.title }}
                 </div>
             </div>
         </div>
